@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = ""
 
 inherit module
 
-SRC_URI = ""
+SRC_URI = "https://github.com/ProProperDev/Watchpoint_Kernel_Module/tree/main/source;protocol=https"
 
 # Modify these as desired
 PV = "1.0+git${SRCPV}"
