@@ -49,7 +49,7 @@ static ssize_t wp_store(struct kobject *kobj, struct kobj_attribute *attr, const
 static struct kobj_attribute watchpoint_attr = __ATTR(address, 0664, wp_show, wp_store);
 
 static void breakpoint_handler(struct perf_event *bp, struct perf_sample_data *data, struct pt_regs *regs) {
-    pr_info("%s: Value on address 0x%x changed\n", THIS_MODULE->name,(void*)(uintptr_t)data->addr);
+    pr_info("%s: Access to address 0x%llx detected\n", THIS_MODULE->name,(void*)(uintptr_t)data->addr);
     pr_info("%s: Dump stack from breakpoint_handler:\n", THIS_MODULE->name);    
     dump_stack();
     pr_info("%s: End of dump stack from breakpoint_handler\n", THIS_MODULE->name);
