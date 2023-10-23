@@ -1,23 +1,18 @@
-# Unable to find any files that looked like license statements. Check the accompanying
-# documentation and source headers and set LICENSE and LIC_FILES_CHKSUM accordingly.
-#
-# NOTE: LICENSE is being set to "CLOSED" to allow you to at least start building - if
-# this is not accurate with respect to the licensing of the software being built (it
-# will not be in most cases) you must specify the correct value before using this
-# recipe for anything other than initial testing/development!
-LICENSE = "CLOSED"
+SUMMARY = "Example of how to build an external Linux kernel module"
+DESCRIPTION = "${SUMMARY}"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = ""
 
 inherit module
 
-SRC_URI = "/home/mint/poky/Watchpoint_Kernel_Module/source"
+SRC_URI = "file://Makefile \
+           file://watchpoint_module.c \
+           file://test_watchpoint.c \
+          "
 
-# Modify these as desired
-PV = "1.0+git${SRCPV}"
-SRCREV = "${AUTOREV}"
+S = "${WORKDIR}"
 
-S = "${WORKDIR}/git"
+# The inherit of module.bbclass will automatically name module packages with
+# "kernel-module-" prefix as required by the oe-core build environment.
 
-# NOTE: this is a Makefile-only piece of software, so we cannot generate much of the
-# recipe automatically - you will need to examine the Makefile yourself and ensure
-# that the appropriate arguments are passed in.
+RPROVIDES:${PN} += "kernel-module-watchpoint"
