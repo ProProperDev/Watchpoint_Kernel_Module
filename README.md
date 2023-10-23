@@ -15,4 +15,8 @@
 5. Синхронизируемся с удалённым репозиторием. \
    `$ git pull`
 6. В директории poky/ запускаем скрипт для автоматической установки окружения для сборки. \
-   `$ source oe-init-build-env`
+   `$ source oe-init-build-env wp_workdir`
+7. Возвращаемся в poky/ и копируем рецепт сборки из удалённого репозитория. \
+   `$ cd ..` \
+   `$ git clone https://github.com/ProProperDev/Watchpoint_Kernel_Module/tree/main/recipes_and_conf`
+   
