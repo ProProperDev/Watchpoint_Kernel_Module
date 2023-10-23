@@ -18,5 +18,5 @@
    `$ source oe-init-build-env wp_workdir`
 7. Возвращаемся в poky/ и копируем рецепт сборки из удалённого репозитория. \
    `$ cd ..` \
-   `$ git clone https://github.com/ProProperDev/Watchpoint_Kernel_Module/tree/main/recipes_and_conf`
+   `$ git clone https://github.com/ProProperDev/Watchpoint_Kernel_Module`
    
