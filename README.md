@@ -19,4 +19,20 @@
 7. Возвращаемся в poky/ и копируем рецепт сборки из удалённого репозитория. \
    `$ cd ..` \
    `$ git clone https://github.com/ProProperDev/Watchpoint_Kernel_Module`
+8. Переходим в директорию poky/wp_workdir/conf и добавляем в файл bblayers.conf новый слой
+   `$ cd ./wp_workdir/conf` \
+   Путь до директории poky/ может отличаться. В моём случае bblayers.conf выглядит так: \
+   `# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf` \
+   `# changes incompatibly` \
+   `POKY_BBLAYERS_CONF_VERSION = "2"`
+
+   `BBPATH = "${TOPDIR}"` \
+   `BBFILES ?= ""`
+
+   `BBLAYERS ?= " \` \
+   `/home/mint/poky/meta \` \
+   `/home/mint/poky/meta-poky \` \
+   `/home/mint/poky/meta-yocto-bsp \` \
+   `/home/mint/poky/Watchpoint_Kernel_Module/recipes_and_conf \` \
+   `"` 
    
