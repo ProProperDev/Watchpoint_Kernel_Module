@@ -43,21 +43,21 @@
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/RunqemuQemux86.png)
 14. Проверяем наличие модулей в /lib/modules/6.1.53-yocto-standard/extra.  \
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/InModDir.png)
-15. Устанавливаем модуль test_watchpoint.ko, либо из директории /lib/modules/6.1.53-yocto-standard/extra, либо указав полный путь к модулю. В моём случае из директории. И выводим буфер сообщений ядра в стандартный поток вывода.   \
+15. Загружаем модуль test_watchpoint.ko, либо из директории /lib/modules/6.1.53-yocto-standard/extra, либо указав полный путь к модулю. В моём случае из директории. И выводим буфер сообщений ядра в стандартный поток вывода.   \
     `# insmod test_watchpoint.ko`  \
     `# dmesg | tail`
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/TestModIns.png)
 16. Аналогично предыдущему пункту поступаем с модулем watchpoint_module.ko.  \
     `# insmod watchpoint_module.ko`  \
     `# dmesg | tail`  \
-    Примечание: поскольку мы не задали при установке модуля переменную address, watchpoint установится на адрес 0x0.
+    Примечание: поскольку мы не задали при загрузке модуля переменную address, watchpoint установится на адрес 0x0.
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/WatchModIns.png)
-17. Сменим адрес watchpoint на тот, на котором модуль test_watchpoint инкремирует значение каждые 10 сек. И выводим буфер сообщений ядра в стандартный поток вывода. \
+17. Сменим адрес watchpoint на тот, на котором модуль test_watchpoint инкриминирует значение каждые 10 сек. И выводим буфер сообщений ядра в стандартный поток вывода. \
     `# echo "0xd13dc284" > /sys/kernel/watchpoint/address`  \
     `# dmesg | tail`
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/ChangeAddress1.png)
     Watchpoint сменила адрес и при обращении по этому адресу печатает backtrace.
-18. Удаляем наши модули.  \
+18. Выгружаем наши модули.  \
     `# rmmod test_watchpoint`  \
     `# rmmod watchpoint_module`
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/RmmodMods.png)
