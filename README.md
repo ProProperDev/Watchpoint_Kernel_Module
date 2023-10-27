@@ -34,10 +34,11 @@
     `IMAGE_INSTALL:append = " watchpoint-module"`  \
     И нужно раскомментировать строку:  \
     `MACHINE ?= "qemux86"`
-    ![Screenshoot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/PrepareLocalConf.png)
+    ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/PrepareLocalConf.png)
 14. Запускаем сборку из директории poky/build. В моём случае сборка заняла ~20 часов.  \
     `$ bitbake core-image-minimal`
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/AfterBuildingImage.png)
-15. Запускаем сборку.  \
+15. Запускаем сборку. Для удобства вызываем дублирующий терминал (Ctrl+Alt+2). По умолчанию пользователь root, без пароля. \
     `$ runqemu qemux86`
+    ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/RunqemuQemux86.png)
    
