@@ -17,7 +17,7 @@
 6. В директории poky/ запускаем скрипт для автоматической установки окружения для сборки. По завершении скрипта оказываемся в
    директории poky/build.  \
    `$ source oe-init-build-env`
-8. Клонируем репозиторий с модулем в директорию poky/ (https://docs.yoctoproject.org/kernel-dev/common.html). \
+8. Клонируем репозиторий с модулем в директорию poky/. \
    `$ cd ..` \
    `$ git clone https://github.com/ProProperDev/Watchpoint_Kernel_Module`
 9. Создаём новый слой в директории poky/ для последующего добавления в сборку.  \
@@ -29,4 +29,15 @@
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/CreateAddCheckNewLayer.png)
 12. Копируем директории poky/Watchpoint_Kernel_Module/conf и poky/Watchpoint_Kernel_Module/recipes-kernel в poky/meta-watchpoint-mod c заменой файлов с одинаковым именем. Проверяем структуру директории poky/meta-watchpoint-mod.
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/CopyInLayerAndCheckThisTree.png)
+13. Готовим конфигурацию сборки в файле poky/build/conf/local.conf. Открываем в текстовом редакторе и редактируем.
+    Добавляем строку:  \
+    `IMAGE_INSTALL:append = " watchpoint-module"`  \
+    И нужно раскомментировать строку:  \
+    `MACHINE ?= "qemux86"`
+    ![Screenshoot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/PrepareLocalConf.png)
+14. Запускаем сборку из директории poky/build. В моём случае сборка заняла ~20 часов.  \
+    `$ bitbake core-image-minimal`
+    ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/AfterBuildingImage.png)
+15. Запускаем сборку.  \
+    `$ runqemu qemux86`
    
