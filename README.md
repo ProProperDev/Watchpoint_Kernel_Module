@@ -45,7 +45,7 @@
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/RunqemuQemux86.png)
 14. Проверяем наличие модулей в /lib/modules/6.1.53-yocto-standard/extra.  \
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/InModDir.png)
-15. Загружаем модуль test_watchpoint.ko, либо из директории /lib/modules/6.1.53-yocto-standard/extra, либо указав полный путь к модулю. В моём случае из директории. И выводим буфер сообщений ядра в стандартный поток вывода.   \
+15. Загружаем модуль test_watchpoint.ko, либо из директории /lib/modules/6.1.53-yocto-standard/extra, либо указав полный путь к модулю. И выводим буфер сообщений ядра в стандартный поток вывода.   \
     `# insmod test_watchpoint.ko`  \
     `# dmesg | tail`
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/TestModIns.png)
