@@ -15,7 +15,7 @@
 5. Синхронизируемся с удалённым репозиторием. \
    `$ git pull`
 6. В директории poky/ запускаем скрипт для автоматической установки окружения для сборки. \
-   `$ source oe-init-build-env wp_workdir`
+   `$ source oe-init-build-env`
 7. (https://docs.yoctoproject.org/kernel-dev/common.html) \
    `$ cd ..` \
    `$ git clone https://github.com/ProProperDev/Watchpoint_Kernel_Module`
