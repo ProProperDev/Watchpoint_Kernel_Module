@@ -24,18 +24,9 @@
    `$ bitbake-layers create-layer meta-watchpoint-mod`
 10. Добавляем наш слой в сборку.  \
    `$ bitbake-layers add-layer meta-watchpoint-mod` 
-   Путь до директории poky/ может отличаться. В моём случае bblayers.conf выглядит так: \
-   `# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf` \
-   `# changes incompatibly` \
-   `POKY_BBLAYERS_CONF_VERSION = "2"`
-
-   `BBPATH = "${TOPDIR}"` \
-   `BBFILES ?= ""`
-
-   `BBLAYERS ?= " \` \
-   `/home/mint/poky/meta \` \
-   `/home/mint/poky/meta-poky \` \
-   `/home/mint/poky/meta-yocto-bsp \` \
-   `/home/mint/poky/Watchpoint_Kernel_Module/recipes_and_conf \` \
-   `"` 
+11. Проверяем, добавился ли наш слой и какие слои вообще добавлены в нашу сборку.  \
+   `$ bitbake-layers show-layers`
+    ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/CreateAddCheckNewLayer.png)
+12. Копируем директории poky/Watchpoint_Kernel_Module/conf и poky/Watchpoint_Kernel_Module/recipes-kernel в poky/meta-watchpoint-mod c заменой файлов с одинаковым именем. Проверяем структуру директории poky/meta-watchpoint-mod.
+    ![Screenshot]()
    
