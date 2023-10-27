@@ -25,9 +25,11 @@
 8. Добавляем наш слой в сборку.  \
    `$ bitbake-layers add-layer meta-watchpoint-mod` 
 9. Проверяем, добавился ли наш слой и какие слои вообще добавлены в нашу сборку.  \
-   `$ bitbake-layers show-layers`
+   `$ bitbake-layers show-layers`  \
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/CreateAddCheckNewLayer.png)
 10. Копируем директории poky/Watchpoint_Kernel_Module/conf и poky/Watchpoint_Kernel_Module/recipes-kernel в poky/meta-watchpoint-mod c заменой файлов с одинаковым именем. Проверяем структуру директории poky/meta-watchpoint-mod.
+    
+    Примечание: директория recipes-example сгенерирована автоматически при создании слоя, можно её просто игнорировать, а можно удалить, чтобы не мешала. Будем игнорировать.
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/CopyInLayerAndCheckThisTree.png)
 11. Готовим конфигурацию сборки в файле poky/build/conf/local.conf. Открываем в текстовом редакторе и редактируем.
     Добавляем строку:  \
