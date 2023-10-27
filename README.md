@@ -14,13 +14,16 @@
    `$ git checkout -t origin/mickledore -b my-mickledore`
 5. Синхронизируемся с удалённым репозиторием. \
    `$ git pull`
-6. В директории poky/ запускаем скрипт для автоматической установки окружения для сборки. \
+6. В директории poky/ запускаем скрипт для автоматической установки окружения для сборки. По завершении скрипта оказываемся в
+   директории poky/build.  \
    `$ source oe-init-build-env`
-7. (https://docs.yoctoproject.org/kernel-dev/common.html) \
+8. Клонируем репозиторий с модулем в директорию poky/ (https://docs.yoctoproject.org/kernel-dev/common.html). \
    `$ cd ..` \
    `$ git clone https://github.com/ProProperDev/Watchpoint_Kernel_Module`
-8. Переходим в директорию poky/wp_workdir/conf и добавляем в файл bblayers.conf новый слой
-   `$ cd ./wp_workdir/conf` \
+9. Создаём новый слой в директории poky/ для последующего добавления в сборку.  \
+   `$ bitbake-layers create-layer meta-watchpoint-mod`
+10. Добавляем наш слой в сборку.  \
+   `$ bitbake-layers add-layer meta-watchpoint-mod` 
    Путь до директории poky/ может отличаться. В моём случае bblayers.conf выглядит так: \
    `# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf` \
    `# changes incompatibly` \
