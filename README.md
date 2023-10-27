@@ -37,7 +37,7 @@
     И нужно раскомментировать строку:  \
     `MACHINE ?= "qemux86"`
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/PrepareLocalConf.png)
-12. Запускаем сборку из директории poky/build. В моём случае сборка заняла ~20 часов.  \
+12. Начинаем сборку из директории poky/build. В моём случае сборка заняла ~20 часов.  \
     `$ bitbake core-image-minimal`
     ![Screenshot](https://github.com/ProProperDev/Watchpoint_Kernel_Module/blob/main/Screenshots/AfterBuildingImage.png)
 13. Запускаем сборку. Для удобства вызываем дублирующий терминал (Ctrl+Alt+2). По умолчанию пользователь root, без пароля. \
